@@ -8,25 +8,40 @@
 }
 
 body{
-    height: 100vh;
+    height: 900vh;
 }
 
-nav.meu-menu-lateral{
+nav.meu_menu_lateral.expadido{
     width: 300px;
-    height: 100%;
-    background-color: #114b7a;
-    padding: 40px 0 40px 1%;
+    
 }
 
-.btn-que-expande{
+nav.meu_menu_lateral{
+    /* width: 300px; */
+    width: 80px;
+    height: 100%;
+    /* paleta 1 */
+    background-color: #114b7a;
+    /* paleta 2 */
+    /* background-color: #042347; */
+    padding: 40px 0 40px 1%;
+    box-shadow: 5px 0 0 #2b802b;
+    position: fixed;
+    top:0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;/* parâmetro que define o tempo para que a classe transite de nav.meu_menu_lateral para nav.meu_menu_lateral.expadido */
+}
+
+.btn_que_expande{
     width: 100%;
     padding-left: 10px;
 }
 
-.btn-que-expande > svg{/* 
-        .btn-que-expande → Seleciona elementos com a classe btn-que-expande.
-        ">" (seletor de filho direto) → Especifica que o svg deve ser um FILHO DIRETO do elemento .btn-que-expande.
-        Nesse caso, o estilo só se aplicará a elementos <svg>, SE A TAG/ELEMENTO "<svg>" FOR ABERTA IMEDIATAMENTE APÓS A ABERTURA DE UMA TAG/ELEMENTO COM A CLASSE ".btn-que-expande" */
+.btn_que_expande > svg{/* 
+        .btn_que_expande → Seleciona elementos com a classe btn_que_expande.
+        ">" (seletor de filho direto) → Especifica que o svg deve ser um FILHO DIRETO do elemento .btn_que_expande.
+        Nesse caso, o estilo só se aplicará a elementos <svg>, SE A TAG/ELEMENTO "<svg>" FOR ABERTA IMEDIATAMENTE APÓS A ABERTURA DE UMA TAG/ELEMENTO COM A CLASSE ".btn_que_expande" */
     fill: aliceblue;
     width: 3vh;
     height: 3vh;
@@ -43,21 +58,51 @@ ul{
     list-style-type: none;
 }
 
-ul li.item-do-meu-menu a{
-    /* Diferente do ">" visto no em ".btn-que-expande > svg", escrito dessa maneira define que essa regra se aplicaria a qualquer <svg> dentro de .btn-que-expande, independentemente de quantos níveis abaixo ele estivesse.  */
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.8vh;
-    padding: 10px 1% 10px 4%;
-    display: flex;
-    line-height: 2.6vh;
+ul li.item_do_meu_menu{
+    transition: .2s;/* parâmetro que define o tempo para que a classe transite de ul li.item_do_meu_menu para ul li.item_do_meu_menu:hover */
 }
 
-ul li.item-do-meu-menu a .icone-da-opcao-menu > svg{
-/* ul li.item-do-meu-menu svg{ */
-    fill: aliceblue;
-    width: 2.6vh;
-    height: 2.6vh;
-    margin: 0 0.9vh;
+ul li.ativa{/* classe que é chada 1 */
+    background-color: #808000;
+}
 
+ul li.item_do_meu_menu:hover{
+    /* paleta 1 */
+    /* background-color: #682686; */
+    /* paleta 1b */
+    background-color: #808000;
+    /* background-color: rgba(14, 56, 14, 0.8); */
+    /* paleta 2 */
+    /* background-color: #682686; */
+}
+
+ul li.item_do_meu_menu a{
+/* Diferente do ">" visto no em ".btn_que_expande > svg", escrito dessa maneira define que essa regra se aplicaria a qualquer <svg> dentro de .btn_que_expande, independentemente de quantos níveis abaixo ele estivesse.  */
+    color: #fff;
+    text-decoration: none;
+    font-size: 16.668px;
+    padding: 10px 1% 10px 4%;
+    display: flex;
+    line-height: 24px;
+}
+
+ul li.item_do_meu_menu a .link_do_txt_fdp{
+    white-space: nowrap; /* Impede a quebra de linha */
+    margin-left: 80px;
+    transition: 0.7s;
+    opacity: 0;
+}
+
+nav.meu_menu_lateral.expadido .link_do_txt_fdp{/* Define formatação diferente para alguns parâmentros de link_do_txt_fdp quando o objeto de classe meu_menu_lateral possuir a também a classe expadido */
+    margin-left: 27px;
+    opacity: 1;
+}
+
+ul li.item_do_meu_menu a .icone-da-opcao-menu > svg{
+/* ul li.item_do_meu_menu svg{ */
+    fill: aliceblue;
+    width: 24px;
+    height: 24px;
+    margin: 0 0.9vh;
+    line-height: 24px;
 }
