@@ -23,13 +23,41 @@ nav.meu-menu-lateral{
     padding-left: 10px;
 }
 
-.btn-que-expande > svg{
+.btn-que-expande > svg{/* 
+        .btn-que-expande → Seleciona elementos com a classe btn-que-expande.
+        ">" (seletor de filho direto) → Especifica que o svg deve ser um FILHO DIRETO do elemento .btn-que-expande.
+        Nesse caso, o estilo só se aplicará a elementos <svg>, SE A TAG/ELEMENTO "<svg>" FOR ABERTA IMEDIATAMENTE APÓS A ABERTURA DE UMA TAG/ELEMENTO COM A CLASSE ".btn-que-expande" */
     fill: aliceblue;
-    width: 4vh;
-    height: 4vh;
+    width: 3vh;
+    height: 3vh;
     cursor: pointer;
 }
 
 svg.oculto{
     display: none;
+}
+
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-do-meu-menu a{
+    /* Diferente do ">" visto no em ".btn-que-expande > svg", escrito dessa maneira define que essa regra se aplicaria a qualquer <svg> dentro de .btn-que-expande, independentemente de quantos níveis abaixo ele estivesse.  */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8vh;
+    padding: 10px 1% 10px 4%;
+    display: flex;
+    line-height: 2.6vh;
+}
+
+ul li.item-do-meu-menu a .icone-da-opcao-menu > svg{
+/* ul li.item-do-meu-menu svg{ */
+    fill: aliceblue;
+    width: 2.6vh;
+    height: 2.6vh;
+    margin: 0 0.9vh;
+
 }
